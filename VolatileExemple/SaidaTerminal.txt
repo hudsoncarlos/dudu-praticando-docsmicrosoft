@@ -1,0 +1,4 @@
+﻿1 - Tópico principal: iniciando o tópico do trabalhador...
+2 - Propriedade _shouldStopVolatile sendo acessada por outra thread.
+3 - Thread de trabalho: terminando normalmente.
+4 - Encadeamento principal: o encadeamento de trabalho foi encerrado.
