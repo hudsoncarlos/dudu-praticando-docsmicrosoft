@@ -1,0 +1,98 @@
+﻿Thread1 - Bloqueado.
+Thread2 foi negado o bloqueio.
+Thread3 foi negado o bloqueio.
+Thread4 foi negado o bloqueio.
+Thread1 - Ainda existe um bloqueio.
+Thread1 - Desbloqueado.
+Thread5 - Bloqueado.
+Thread5 - Ainda existe um bloqueio.
+Thread5 - Desbloqueado.
+Thread6 - Bloqueado.
+Thread7 foi negado o bloqueio.
+Thread6 - Ainda existe um bloqueio.
+Thread6 - Desbloqueado.
+Thread8 - Bloqueado.
+Thread8 - Ainda existe um bloqueio.
+Thread8 - Desbloqueado.
+Thread9 - Bloqueado.
+Thread10 foi negado o bloqueio.
+Thread9 - Ainda existe um bloqueio.
+Thread9 - Desbloqueado.
+Thread2 - Bloqueado.
+Thread3 foi negado o bloqueio.
+Thread4 foi negado o bloqueio.
+Thread1 foi negado o bloqueio.
+Thread2 - Ainda existe um bloqueio.
+Thread2 - Desbloqueado.
+Thread5 - Bloqueado.
+Thread7 foi negado o bloqueio.
+Thread5 - Ainda existe um bloqueio.
+Thread5 - Desbloqueado.
+Thread6 - Bloqueado.
+Thread6 - Ainda existe um bloqueio.
+Thread6 - Desbloqueado.
+Thread8 - Bloqueado.
+Thread8 - Ainda existe um bloqueio.
+Thread8 - Desbloqueado.
+Thread10 foi negado o bloqueio.
+Thread9 - Bloqueado.
+Thread9 - Ainda existe um bloqueio.
+Thread9 - Desbloqueado.
+Thread3 - Bloqueado.
+Thread4 foi negado o bloqueio.
+Thread1 foi negado o bloqueio.
+Thread2 foi negado o bloqueio.
+Thread3 - Ainda existe um bloqueio.
+Thread3 - Desbloqueado.
+Thread7 - Bloqueado.
+Thread5 foi negado o bloqueio.
+Thread7 - Ainda existe um bloqueio.
+Thread7 - Desbloqueado.
+Thread6 - Bloqueado.
+Thread6 - Ainda existe um bloqueio.
+Thread6 - Desbloqueado.
+Thread10 foi negado o bloqueio.
+Thread8 - Bloqueado.
+Thread8 - Ainda existe um bloqueio.
+Thread8 - Desbloqueado.
+Thread9 - Bloqueado.
+Thread4 foi negado o bloqueio.
+Thread9 - Ainda existe um bloqueio.
+Thread9 - Desbloqueado.
+Thread1 - Bloqueado.
+Thread2 foi negado o bloqueio.
+Thread3 foi negado o bloqueio.
+Thread1 - Ainda existe um bloqueio.
+Thread1 - Desbloqueado.
+Thread5 - Bloqueado.
+Thread7 foi negado o bloqueio.
+Thread5 - Ainda existe um bloqueio.
+Thread5 - Desbloqueado.
+Thread6 - Bloqueado.
+Thread10 foi negado o bloqueio.
+Thread6 - Ainda existe um bloqueio.
+Thread6 - Desbloqueado.
+Thread8 - Bloqueado.
+Thread8 - Ainda existe um bloqueio.
+Thread8 - Desbloqueado.
+Thread4 - Bloqueado.
+Thread9 foi negado o bloqueio.
+Thread2 foi negado o bloqueio.
+Thread3 foi negado o bloqueio.
+Thread4 - Ainda existe um bloqueio.
+Thread4 - Desbloqueado.
+Thread1 - Bloqueado.
+Thread1 - Ainda existe um bloqueio.
+Thread1 - Desbloqueado.
+Thread7 - Bloqueado.
+Thread5 foi negado o bloqueio.
+Thread7 - Ainda existe um bloqueio.
+Thread7 - Desbloqueado.
+Thread10 - Bloqueado.
+Thread6 foi negado o bloqueio.
+Thread10 - Ainda existe um bloqueio.
+Thread10 - Desbloqueado.
+Thread8 - Bloqueado.
+Thread9 foi negado o bloqueio.
+Thread8 - Ainda existe um bloqueio.
+Thread8 - Desbloqueado.
