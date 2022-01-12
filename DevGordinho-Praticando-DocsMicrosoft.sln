@@ -7,7 +7,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreWithRazorPages", "EFC
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolatileExemple", "VolatileExemple\VolatileExemple.csproj", "{5651881B-ED69-4040-A2FE-9B0DF903AC2C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "InterlockedExemple", "InterlockedExemple\InterlockedExemple.csproj", "{A1766AAC-6403-4789-82C1-9DB3339404F3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterlockedExemple", "InterlockedExemple\InterlockedExemple.csproj", "{A1766AAC-6403-4789-82C1-9DB3339404F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandlerExemple", "EventHandlerExemple\EventHandlerExemple.csproj", "{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{A1766AAC-6403-4789-82C1-9DB3339404F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A1766AAC-6403-4789-82C1-9DB3339404F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A1766AAC-6403-4789-82C1-9DB3339404F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
