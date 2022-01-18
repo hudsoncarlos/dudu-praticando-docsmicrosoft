@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 17
-VisualStudioVersion = 17.0.32014.148
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32002.261
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EFCoreWithRazorPages", "EFCoreWithRazorPages\EFCoreWithRazorPages.csproj", "{3C6CF4C3-CDFE-4350-A398-482DEE00A81F}"
 EndProject
@@ -9,7 +9,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VolatileExemple", "Volatile
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "InterlockedExemple", "InterlockedExemple\InterlockedExemple.csproj", "{A1766AAC-6403-4789-82C1-9DB3339404F3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EventHandlerExemple", "EventHandlerExemple\EventHandlerExemple.csproj", "{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "EventHandlerExemple", "EventHandlerExemple\EventHandlerExemple.csproj", "{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "aspnetcore", "aspnetcore", "{22152549-2478-45AA-8B49-899E946230BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "fundamentals", "fundamentals", "{9AA0130E-B8D0-4102-8982-718BB0C11EAA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DI", "DI\DI.csproj", "{7BC35622-89A2-41E7-8B07-0C390D8E3B28}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,9 +39,21 @@ Global
 		{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7BC35622-89A2-41E7-8B07-0C390D8E3B28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BC35622-89A2-41E7-8B07-0C390D8E3B28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BC35622-89A2-41E7-8B07-0C390D8E3B28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BC35622-89A2-41E7-8B07-0C390D8E3B28}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{3C6CF4C3-CDFE-4350-A398-482DEE00A81F} = {22152549-2478-45AA-8B49-899E946230BB}
+		{5651881B-ED69-4040-A2FE-9B0DF903AC2C} = {22152549-2478-45AA-8B49-899E946230BB}
+		{A1766AAC-6403-4789-82C1-9DB3339404F3} = {22152549-2478-45AA-8B49-899E946230BB}
+		{EAA62F42-E135-4CEE-83A3-9684FA5DEBDB} = {22152549-2478-45AA-8B49-899E946230BB}
+		{9AA0130E-B8D0-4102-8982-718BB0C11EAA} = {22152549-2478-45AA-8B49-899E946230BB}
+		{7BC35622-89A2-41E7-8B07-0C390D8E3B28} = {9AA0130E-B8D0-4102-8982-718BB0C11EAA}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2CCBA93-747D-4823-850D-034F99F04DD8}
