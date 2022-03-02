@@ -1,11 +1,11 @@
-﻿using EFCoreWithRazorPages.Models;
-using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.EntityFrameworkCore;
+using praticando_efcore_with_razor_pages.Models;
 
-namespace EFCoreWithRazorPages.Data
+namespace praticando_efcore_with_razor_pages.Data
 {
     public class EFCoreWithRazorPagesContext : DbContext
     {
-        public EFCoreWithRazorPagesContext (DbContextOptions<EFCoreWithRazorPagesContext> options)
+        public EFCoreWithRazorPagesContext(DbContextOptions<EFCoreWithRazorPagesContext> options)
             : base(options)
         {
         }

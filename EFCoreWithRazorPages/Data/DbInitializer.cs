@@ -1,9 +1,8 @@
-﻿using EFCoreWithRazorPages.Data;
-using EFCoreWithRazorPages.Models;
+﻿using praticando_efcore_with_razor_pages.Models;
 using System;
 using System.Linq;
 
-namespace EFCoreWithRazorPages.Data
+namespace praticando_efcore_with_razor_pages.Data
 {
     public static class DbInitializer
     {

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Threading;
 
-namespace manual_reset_event
+namespace praticando_manual_reset_event
 {
     public class Program
     {

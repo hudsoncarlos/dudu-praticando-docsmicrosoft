@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace EventHandlerExemple
+﻿namespace praticando_event_handler
 {
     public class Program
     {
@@ -26,7 +24,7 @@ namespace EventHandlerExemple
             Environment.Exit(0);
         }
 
-        class Counter        
+        class Counter
         {
             private int _limite;
             private int _total;

@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 
-namespace EFCoreWithRazorPages.Models
+namespace praticando_efcore_with_razor_pages.Models
 {
     public class Student
     {

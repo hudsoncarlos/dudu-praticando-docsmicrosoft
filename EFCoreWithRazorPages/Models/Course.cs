@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
 
-namespace EFCoreWithRazorPages.Models
+namespace praticando_efcore_with_razor_pages.Models
 {
     public class Course
     {

@@ -1,4 +1,4 @@
-﻿namespace EFCoreWithRazorPages.Models
+﻿namespace praticando_efcore_with_razor_pages.Models
 {
     public enum Grade
     {

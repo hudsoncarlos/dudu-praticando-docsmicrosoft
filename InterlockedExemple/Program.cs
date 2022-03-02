@@ -1,4 +1,4 @@
-﻿namespace InterlockedExemple
+﻿namespace praticando_Interlocked
 {
     class InterlockedClass
     {
@@ -12,7 +12,7 @@
             Thread minhaThread;
             var randomico = new Random();
 
-            for (int i = 0; i < _numeroThreads; i++) 
+            for (int i = 0; i < _numeroThreads; i++)
             {
                 minhaThread = new Thread(new ThreadStart(ProcessandoMinhaThread))
                 {
@@ -27,7 +27,7 @@
             Console.ReadKey();
         }
 
-        static void ProcessandoMinhaThread() 
+        static void ProcessandoMinhaThread()
         {
             for (int i = 0; i < _numeroInteracoesThread; i++)
             {

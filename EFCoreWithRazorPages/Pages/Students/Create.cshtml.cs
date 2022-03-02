@@ -1,15 +1,15 @@
-﻿using EFCoreWithRazorPages.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using praticando_efcore_with_razor_pages.Models;
 using System.Threading.Tasks;
 
-namespace EFCoreWithRazorPages.Pages.Students
+namespace praticando_efcore_with_razor_pages.Pages.Students
 {
     public class CreateModel : PageModel
     {
-        private readonly EFCoreWithRazorPages.Data.EFCoreWithRazorPagesContext _context;
+        private readonly praticando_efcore_with_razor_pages.Data.EFCoreWithRazorPagesContext _context;
 
-        public CreateModel(EFCoreWithRazorPages.Data.EFCoreWithRazorPagesContext context)
+        public CreateModel(praticando_efcore_with_razor_pages.Data.EFCoreWithRazorPagesContext context)
             => _context = context;
 
         public IActionResult OnGet()

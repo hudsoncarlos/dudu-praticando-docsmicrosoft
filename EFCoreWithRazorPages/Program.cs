@@ -1,11 +1,11 @@
-using EFCoreWithRazorPages.Data;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using praticando_efcore_with_razor_pages.Data;
 using System;
 
-namespace EFCoreWithRazorPages
+namespace praticando_efcore_with_razor_pages
 {
     public class Program
     {

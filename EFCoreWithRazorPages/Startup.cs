@@ -1,14 +1,14 @@
-﻿using EFCoreWithRazorPages.Data;
-using Microsoft.AspNetCore.Builder;
+﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using praticando_efcore_with_razor_pages.Data;
 using System;
 
-namespace EFCoreWithRazorPages
+namespace praticando_efcore_with_razor_pages
 {
     public class Startup
     {
@@ -29,7 +29,7 @@ namespace EFCoreWithRazorPages
 
             services.AddDbContext<EFCoreWithRazorPagesContext>(options =>
                     options.UseSqlServer(Configuration.GetConnectionString("EFCoreWithRazorPagesContext")));
-            
+
             services.AddDatabaseDeveloperPageExceptionFilter();
         }
 

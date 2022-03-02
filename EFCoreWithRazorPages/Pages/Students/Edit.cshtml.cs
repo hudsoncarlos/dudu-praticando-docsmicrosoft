@@ -1,17 +1,17 @@
-﻿using EFCoreWithRazorPages.Models;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
+using praticando_efcore_with_razor_pages.Models;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace EFCoreWithRazorPages.Pages.Students
+namespace praticando_efcore_with_razor_pages.Pages.Students
 {
     public class EditModel : PageModel
     {
-        private readonly EFCoreWithRazorPages.Data.EFCoreWithRazorPagesContext _context;
+        private readonly praticando_efcore_with_razor_pages.Data.EFCoreWithRazorPagesContext _context;
 
-        public EditModel(EFCoreWithRazorPages.Data.EFCoreWithRazorPagesContext context)
+        public EditModel(praticando_efcore_with_razor_pages.Data.EFCoreWithRazorPagesContext context)
         {
             _context = context;
         }
