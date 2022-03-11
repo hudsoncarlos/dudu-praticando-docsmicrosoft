@@ -7,7 +7,9 @@ namespace renomeador_arquivos.Domain.Enums
 {
     public enum EnumProcessos
     {
+        [Display(Name = "hsc rename arquivos")]
         RenomearArquivos = 1,
+        [Display(Name = "exit")]
         Default = 99
     }
 
