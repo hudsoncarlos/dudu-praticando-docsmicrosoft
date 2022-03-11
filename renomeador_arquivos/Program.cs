@@ -1,21 +1,20 @@
-﻿using renomeador_arquivos.Domain;
-using renomeador_arquivos.Domain.Enums;
+﻿using renomeador_arquivos.Domain.Enums;
 using Serilog;
 using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
-using System.Text;
+using System.Net.Http;
 using System.Threading;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace renomeador_arquivos
 {
     internal class Program
     {
-        public static string comando = string.Empty;
-        public static string textoAreaTransferencia = string.Empty;
+        public static string Command = string.Empty;
+        public static string TextClipboard = string.Empty;
+        public static IHttpClientFactory HttpClientFactory { get; private set; }
 
         static void Main(string[] args)
         {
@@ -24,149 +23,148 @@ namespace renomeador_arquivos
 
             Log.Logger = new LoggerConfiguration().WriteTo.Console().CreateLogger();
 
-            IniciarCmd();
+            BeginCommand();
 
             manualResetEvent.Set();
         }
 
-        private static void IniciarCmd()
+        private static void BeginCommand()
         {
             do
             {
                 try
                 {
-                    Log.Logger.Information("Renomeador de arquivos, selecione um item do menu abaixo.");
+                    //Log.Logger.Information("File renamer, select an item from the menu below.");
                     Log.Logger.Information("");
-                    Log.Logger.Information("    1 - Renomear arquivos");
-                    Log.Logger.Information("");
-                    Console.Write("Lara Console> ");
-                    comando = Console.ReadLine();
+                    Console.Write("Lara Command> ");
+                    Command = Console.ReadLine();
 
-                    var processo = (EnumProcessos)Conversor.ParseInt(comando, 99);
+                    //var process = (EnumProcess)LaraConverter.ParseInt(Command, 99);
 
-                    switch (processo)
+                    switch (Command)
                     {
-                        case EnumProcessos.RenomearArquivos:
-                            ProcessarRenomearArquivos();
+                        case "lara file-rename":
+                            ProcessRenameFiles();
                             break;
+                        case "lara cmd":
                         default:
                             break;
                     }
 
-                    comando = string.IsNullOrEmpty(comando) ? string.Empty : comando;
-                    ValidarSeHouveComandoNessaEntrada(comando);
+                    Command = string.IsNullOrEmpty(Command) ? string.Empty : Command;
+                    ValidadeIfThereIsCommandOnThisRoad(Command);
                 }
                 catch { }
-            } while (comando.ToLower() != "exit");
+            } while (Command.ToLower() != "exit");
         }
 
-        private static void ProcessarRenomearArquivos()
+        private static void ProcessRenameFiles()
         {
-            var caminho = SolicitarCaminhoPastaArquivos();
+            var path = RequestFileFolderPath();
 
-            if (!ValidarSeHouveComandoNessaEntrada(caminho))
-                RenomearArquivosUmPorUm(caminho);
+            if (!ValidadeIfThereIsCommandOnThisRoad(path))
+                RenameFileOneByOne(path);
 
-            comando = string.Empty;
+            Command = string.Empty;
         }
 
-        private static string SolicitarCaminhoPastaArquivos()
+        private static string RequestFileFolderPath()
         {
-            var caminho = string.Empty;
+            var path = string.Empty;
 
             do
             {
-                Log.Logger.Information("Digite o caminho do arquivo:");
-                Console.Write("Lara Console> ");
-                comando = Console.ReadLine();
+                Log.Logger.Information("Enter the file path:");
+                Console.Write("Lara command> ");
+                Command = Console.ReadLine();
 
-                caminho = comando;
-                if (!ValidarSeHouveComandoNessaEntrada(comando))
+                path = Command;
+                if (!ValidadeIfThereIsCommandOnThisRoad(Command))
                 {
-                    if (Directory.Exists(caminho))
+                    if (Directory.Exists(path))
                     {
-                        comando = EnumComandos.Sair.GetDisplayName();
-                        Log.Logger.Information($"Caminho inserido existe: {caminho}");
+                        Command = EnumCommands.Exit.GetDisplayName();
+                        Log.Logger.Information($"The Entered path exists: {path}");
                     }
                     else
-                        Log.Logger.Warning("Caminho inválido:");
+                        Log.Logger.Warning("Invalid path:");
                 }
 
-            } while (comando.ToLower() != "exit");
+            } while (Command.ToLower() != "exit");
 
-            return caminho;
+            return path;
         }
 
-        private static void RenomearArquivosUmPorUm(string caminho)
+        private static void RenameFileOneByOne(string path)
         {
-            List<string> arquivos = Directory.GetFiles(caminho).ToList();
+            List<string> files = Directory.GetFiles(path).ToList();
 
-            foreach (var item in arquivos)
+            foreach (var item in files)
             {
-                var resulte = SolicitarNovoNomeDoArquivo(item);
-                if (!ValidarSeHouveComandoNessaEntrada(resulte))
-                    SalvarNovoNomeDoArquivo(item, resulte);
+                var resulte = RequestNewFileName(item);
+                if (!ValidadeIfThereIsCommandOnThisRoad(resulte))
+                    SaveNewFileName(item, resulte);
                 else
                 {
-                    Log.Logger.Information($"Quer voltar ao menu inicial, s/n");
+                    Log.Logger.Information($"Deseja voltar ao menu inicial, s/n");
                     Console.Write("Lara Console> ");
-                    comando = Console.ReadLine();
+                    Command = Console.ReadLine();
 
-                    if (comando.ToLower() == "s")
+                    if (Command.ToLower() == "s")
                         break;
                 }
             }
         }
 
-        private static string SolicitarNovoNomeDoArquivo(string nomeArquivo)
+        private static string RequestNewFileName(string fileName)
         {
-            var novoNomeArquivo = string.Empty;
+            var newFileName = string.Empty;
 
             do
             {
-                var caminhoArquivo = nomeArquivo.Split(Path.DirectorySeparatorChar);
-                var nomeAtual = caminhoArquivo[caminhoArquivo.Length - 1];
+                var filePath = fileName.Split(Path.DirectorySeparatorChar);
+                var currentName = filePath[filePath.Length - 1];
 
-                textoAreaTransferencia = nomeAtual;
-                AbrirDialogoInsereDadosNaAreaDeTransferencia();
+                TextClipboard = currentName;
+                OpenDialogInsertDataInClipboard();                
 
-                Log.Logger.Information($"Digite o novo nome para o arquivo: {nomeAtual}");
-                Console.Write("Lara Console> ");
-                comando = Console.ReadLine();
-                novoNomeArquivo = comando;
+                Log.Logger.Information($"Enter the new name for the file: {currentName}");
+                Console.Write("Lara command> ");
+                Command = Console.ReadLine();
+                newFileName = Command;
 
-                if (comando == nomeAtual)
+                if (Command == currentName)
                 {
-                    comando = EnumComandos.Sair.GetDisplayName();
-                    novoNomeArquivo = comando;
+                    Command = EnumCommands.Exit.GetDisplayName();
+                    newFileName = Command;
                 }                    
 
-                if (!ValidarSeHouveComandoNessaEntrada(comando))
+                if (!ValidadeIfThereIsCommandOnThisRoad(Command))
                 {
-                    if (!File.Exists(nomeArquivo.Replace(nomeAtual, novoNomeArquivo)) && !string.IsNullOrEmpty(novoNomeArquivo))
+                    if (!File.Exists(fileName.Replace(currentName, newFileName)) && !string.IsNullOrEmpty(newFileName))
                     {
-                        comando = EnumComandos.Sair.GetDisplayName();
-                        novoNomeArquivo = nomeArquivo.Replace(nomeAtual, novoNomeArquivo);
+                        Command = EnumCommands.Exit.GetDisplayName();
+                        newFileName = fileName.Replace(currentName, newFileName);
                     }
                     else
-                        Log.Logger.Warning("Nome inválido, o arquivo já existe:");
+                        Log.Logger.Warning("Invalid name, the file already exists:");
                 }
 
-            } while (comando.ToLower() != "exit");
+            } while (Command.ToLower() != "exit");
 
-            return novoNomeArquivo;
+            return newFileName;
         }
 
-        private static void SalvarNovoNomeDoArquivo(string nomeArquivoAntigo, string novoNomeArquivo)
+        private static void SaveNewFileName(string oldFileName, string newFileName)
         {
-            File.Move(nomeArquivoAntigo, novoNomeArquivo);
-            if (File.Exists(novoNomeArquivo))
-                Console.WriteLine("Arquivo Salvo com sucesso!");
+            File.Move(oldFileName, newFileName);
+            if (File.Exists(newFileName))
+                Console.WriteLine("File save successFully!");
             else
-                Console.WriteLine("Algo deu errado, o arquivo não foi salvo.");
+                Console.WriteLine("Something went wrong, the file was not saved.");
         }
 
-        private static bool ValidarSeHouveComandoNessaEntrada(string comando)
+        private static bool ValidadeIfThereIsCommandOnThisRoad(string comando)
         {
             var retorno = false;
 
@@ -175,11 +173,11 @@ namespace renomeador_arquivos
                 case "exit":
                 case "":
                     retorno = true;
-                    Log.Logger.Warning($"Houve um comando nessa entrada: {comando}");
+                    Log.Logger.Warning($"There was a command in that entry: {comando}");
                     break;
                 case "cls":
                     retorno = true;
-                    Log.Logger.Warning($"Houve um comando nessa entrada: {comando}");
+                    Log.Logger.Warning($"There was a command in that entry: {comando}");
                     Console.Clear();
                     break;
                 default:
@@ -189,7 +187,7 @@ namespace renomeador_arquivos
             return retorno;
         }
 
-        public static void AbrirDialogoInsereDadosNaAreaDeTransferencia()
+        public static void OpenDialogInsertDataInClipboard()
         {
             Thread td = new Thread(new ThreadStart(InsereDadosNaAreaDeTransferencia));
             td.SetApartmentState(ApartmentState.STA);
@@ -199,6 +197,6 @@ namespace renomeador_arquivos
         
         [STAThread]
         public static void InsereDadosNaAreaDeTransferencia()
-            => Clipboard.SetText(textoAreaTransferencia);
+            => Clipboard.SetText(TextClipboard);
     }
 }

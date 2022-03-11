@@ -1,10 +1,8 @@
-﻿using renomeador_arquivos.Domain.Enums;
-using System;
-using System.Collections.Generic;
+﻿using System;
 
 namespace renomeador_arquivos.Domain
 {
-    public static class Conversor
+    public static class LaraConverter
     {
         public static int ParseInt(this string str, int def = 0)
         {

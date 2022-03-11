@@ -5,18 +5,17 @@ using System.Reflection;
 
 namespace renomeador_arquivos.Domain.Enums
 {
-    public enum EnumProcessos
+    public enum EnumProcess
     {
-        [Display(Name = "hsc rename arquivos")]
-        RenomearArquivos = 1,
-        [Display(Name = "exit")]
+        [Display(Name = "file-rename")]
+        FileRename = 1,
         Default = 99
     }
 
-    public enum EnumComandos
+    public enum EnumCommands
     {
         [Display(Name = "exit")]
-        Sair = 0
+        Exit = 0
     }
 
     public static class EnumExtensions
