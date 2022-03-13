@@ -25,6 +25,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "renomeador", "renomeador\re
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "renomeador_arquivos", "renomeador_arquivos\renomeador_arquivos.csproj", "{ACAF7BBA-D79D-4AA8-ABF7-B69CF30A67B9}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "netframework", "netframework", "{8837C5B8-C3B4-40D7-A40B-B9DD3363DA5E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "poc-automapper", "poc-automapper\poc-automapper.csproj", "{B8637BEC-46B4-424B-88F3-8F72BE1AF200}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -67,6 +71,10 @@ Global
 		{ACAF7BBA-D79D-4AA8-ABF7-B69CF30A67B9}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ACAF7BBA-D79D-4AA8-ABF7-B69CF30A67B9}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ACAF7BBA-D79D-4AA8-ABF7-B69CF30A67B9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8637BEC-46B4-424B-88F3-8F72BE1AF200}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8637BEC-46B4-424B-88F3-8F72BE1AF200}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8637BEC-46B4-424B-88F3-8F72BE1AF200}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8637BEC-46B4-424B-88F3-8F72BE1AF200}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -81,6 +89,8 @@ Global
 		{96C57418-B990-4B6A-8E56-FEA7DCC0F9BD} = {22152549-2478-45AA-8B49-899E946230BB}
 		{5C629062-0220-4C97-8DEC-C10CD39FBAC1} = {22152549-2478-45AA-8B49-899E946230BB}
 		{F3E17D2F-2A98-499F-AEA5-DA4E3BBCE51A} = {22152549-2478-45AA-8B49-899E946230BB}
+		{ACAF7BBA-D79D-4AA8-ABF7-B69CF30A67B9} = {8837C5B8-C3B4-40D7-A40B-B9DD3363DA5E}
+		{B8637BEC-46B4-424B-88F3-8F72BE1AF200} = {22152549-2478-45AA-8B49-899E946230BB}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E2CCBA93-747D-4823-850D-034F99F04DD8}
