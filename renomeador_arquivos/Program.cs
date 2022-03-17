@@ -1,4 +1,5 @@
 ﻿using renomeador_arquivos.Domain.Enums;
+using renomeador_arquivos.Domain.ValueObjects;
 using Serilog;
 using System;
 using System.Collections.Generic;
@@ -56,6 +57,12 @@ namespace renomeador_arquivos
                 }
                 catch { }
             } while (Command.ToLower() != "exit");
+        }
+
+        private static CommandStructure ConvertCommandObject(string command)
+        {
+            var splitCommand = command.Split(' ');
+
         }
 
         private static void ProcessRenameFiles()

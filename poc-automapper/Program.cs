@@ -40,14 +40,7 @@ namespace poc_automapper
                 Id = 1, Nome = "Hudson Pessoa", SobreNome = "Carlos", Renda = 6.700 
             };
 
-            var pessoaViewModel = new PessoaViewModel(new DateTime(1988, 07, 27), EnumSexo.Masculino)
-            {
-                Id = 2,
-                Nome = "Hudson PessoaViewModel",
-                SobreNome = "Carlos"
-            };
-
-            return MapperConfig.Map(pessoa, pessoaViewModel);
+            return MapperConfig.Map(pessoa, new PessoaViewModel(new DateTime(1988, 07, 27), EnumSexo.Masculino));
         }
     }
 }
